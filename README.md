@@ -22,3 +22,8 @@
 - ЯП: Java
 - БД: Oracle
 - Framework: Spring?...
+### Design
+- Photoshop
+- Figma
+- Adobe Illustrator
+### Kanban board - Trello
