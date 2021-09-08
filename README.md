@@ -15,8 +15,9 @@
 
 
 ## Технологии
+Приложение - PWA, BE -REST API.
 ### Fronend
-- Framework: Svelte
+- Framework: Svelte (SPA)
 ### Backend
 - ЯП: Java
 - БД: Oracle
