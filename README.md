@@ -15,7 +15,7 @@
 
 
 ## Технологии
-Приложение - PWA, BE -REST API.
+Приложение - PWA, BE - REST API.
 ### Fronend
 - Framework: Svelte (SPA)
 ### Backend
