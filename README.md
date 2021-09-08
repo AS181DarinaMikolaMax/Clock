@@ -16,6 +16,8 @@
 
 ## Технологии
 ### Fronend
-- Svelte
+- Framework: Svelte
 ### Backend
-- Java
+- ЯП: Java
+- БД: Oracle
+- Framework: Spring?...
