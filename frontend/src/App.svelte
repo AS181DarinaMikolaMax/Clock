@@ -1,7 +1,23 @@
+<script>
+  import injectServices from "./core/service/injectServices";
+
+  import { Router, Route } from "svelte-routing";
+  import LoginPage from "./auth/LoginPage.svelte";
+  import NavBar from "./components/NavBar.svelte";
+  import HomePage from "./home/HomePage.svelte";
+
+  export let url = "";
+
+  injectServices();
+</script>
+
 <main>
-  <h1>Трекер привычек</h1>
-  <h2>Тут вы можете поставить цель для привычки и добиться ее</h2>
-  <p>В разработке...</p>
+  <Router {url}>
+    <NavBar />
+
+    <Route component={HomePage} path="/" />
+    <Route component={LoginPage} path="login" />
+  </Router>
 </main>
 
 <style>
@@ -10,13 +26,6 @@
     padding: 1em;
     max-width: 240px;
     margin: 0 auto;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
   }
 
   @media (min-width: 640px) {
