@@ -14,9 +14,11 @@
 <main>
   <Router {url}>
     <NavBar />
-
     <Route component={HomePage} path="/" />
     <Route component={LoginPage} path="login" />
+
+    <!-- For Github Pages intial page -->
+    <Route component={HomePage} path="KekToDo" />
   </Router>
 </main>
 
