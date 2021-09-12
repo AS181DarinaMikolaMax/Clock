@@ -1,10 +1,7 @@
 <script>
   import injectServices from "./core/service/injectServices";
-
-  import { Router, Route } from "svelte-routing";
-  import LoginPage from "./auth/LoginPage.svelte";
   import NavBar from "./components/NavBar.svelte";
-  import HomePage from "./home/HomePage.svelte";
+  import AppRouter from "./router/AppRouter.svelte";
 
   export let url = "";
 
@@ -12,14 +9,9 @@
 </script>
 
 <main>
-  <Router {url}>
+  <AppRouter {url}>
     <NavBar />
-    <Route component={HomePage} path="/" />
-    <Route component={LoginPage} path="login" />
-
-    <!-- For Github Pages intial page -->
-    <Route component={HomePage} path="KekToDo" />
-  </Router>
+  </AppRouter>
 </main>
 
 <style>

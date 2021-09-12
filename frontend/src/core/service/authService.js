@@ -1,13 +1,16 @@
-import authState, { initialState } from "../store/authState";
+import authState from "../store/authState";
 
-const stubToken = 'token'
+const stubToken = 'c29iYWthMTc='
+const asyncStub = async () => new Promise(res => setTimeout(res, 500));
 export default class AuthService {
     async login(username, password)  {
-        await new Promise(res => setTimeout(res, 500));
-        authState.set({username: username, token: stubToken,});
+        await asyncStub();
+        localStorage.setItem('token', stubToken);
+        authState.update((state) => ({...state, token: stubToken}))
     }
 
     async logout() {
-        authState.set(initialState());
+        localStorage.removeItem('token');
+        authState.update((state) => ({...state, token: null}))
     }
 }

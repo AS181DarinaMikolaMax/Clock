@@ -1,17 +1,23 @@
 <script>
   import { getContext } from "svelte";
 
-  import { Link } from "svelte-routing";
+  import { Link, navigate } from "svelte-routing";
   import AuthService from "../core/service/authService";
   import authState from "../core/store/authState";
+  import { routes } from "../router/AppRouter.svelte";
 
   const authService = getContext(AuthService);
+
+  const logout = async () => {
+    await authService.logout();
+    navigate(routes.LOGIN);
+  };
 
   $: authButtonItem = $authState.token
     ? {
         title: "Выйти",
         path: "/",
-        onclick: () => authService.logout(),
+        onclick: logout,
       }
     : { title: "Войти", path: "login" };
 

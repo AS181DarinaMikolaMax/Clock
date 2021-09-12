@@ -1,8 +1,14 @@
 import { writable } from "svelte/store";
 
-export const initialState = () =>  ({
-    token: null,
-    username: null,
+const initialState = {
+    token: localStorage.getItem('token'),
+};
+
+const authState = writable(initialState);
+
+window.addEventListener('storage', () => {
+    console.log('AAAAAAAAAAAAa');
+    authState.update((state) => ({...state, token: localStorage.getItem('token')}))
 });
 
-export default writable(initialState());
+export default authState;
