@@ -2,7 +2,7 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://as181darinamikolamax.github.io/KekToDo/",
+  "homepage": "https://as181darinamikolamax.github.io/",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
