@@ -14,9 +14,10 @@
 
 <style>
   h1 {
+    display: flex;
     color: #ff3e00;
     text-transform: uppercase;
-    font-size: 4em;
+    font-size: 3em;
     font-weight: 100;
   }
 </style>
