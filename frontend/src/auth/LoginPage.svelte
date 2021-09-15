@@ -7,6 +7,8 @@
   import AuthService from "../core/service/authService";
   import { BarLoader } from "svelte-loading-spinners";
   import TextField from "./componens/TextField.svelte";
+  import SubmitButton from "./componens/SubmitButton.svelte";
+  import SignUpButton from "./componens/SignUpButton.svelte";
 
   const authServise = getContext(AuthService);
 
@@ -32,77 +34,104 @@
   $: isValid = validate(username, pwd);
 </script>
 
-<h1>Вход</h1>
-<div>
-  <form>
-    <TextField
-      class="text-input"
-      bind:value={username}
-      placeholder="Имя пользователя"
-    />
-    <TextField
-      type="password"
-      class="text-input"
-      bind:value={pwd}
-      placeholder="Пароль"
-    />
-    <input
-      type="button"
-      class="signin"
-      value="Войти"
-      class:isValid
-      on:click={isValid ? handleLogin : null}
-    />
-    <input
-      type="button"
-      class="signup"
-      value="У меня нет аккаунта"
-      on:click={handleSignUp}
-    />
-    {#if isLoading}
-      <BarLoader size="90" color="rgb(145, 87, 187)" />
-    {/if}
-  </form>
+<div class="main">
+  <div class="container">
+    <div class="logo">
+      <img src="images/logo.png" alt="logo" />
+    </div>
+    <div class="form-wrapper">
+      <form autocomplete="off">
+        <TextField
+          class="text-input"
+          bind:value={username}
+          placeholder="Ім'я користувача"
+        />
+        <TextField
+          type="password"
+          class="text-input"
+          bind:value={pwd}
+          placeholder="Пароль"
+        />
+
+        <div class="button-wrapper">
+          <SubmitButton value="Увійти" on:click={handleLogin} />
+        </div>
+
+        {#if isLoading}
+          <BarLoader size="90" color="rgb(145, 87, 187)" />
+        {/if}
+      </form>
+    </div>
+    <SignUpButton value="У мене немає аккаунту" on:click={handleSignUp} />
+  </div>
 </div>
 
 <style>
+  .main {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: url(/images/background.png);
+    background-size: cover;
+    background-color: #33174a;
+  }
+
+  .button-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .form-wrapper {
+    display: flex;
+    justify-content: center;
+  }
   form {
     display: flex;
     align-items: start;
     align-self: stretch;
+    background-color: rgba(227, 193, 252, 0.6);
+    padding: 10pt 50pt;
+    border-radius: 35px;
     flex-direction: column;
     margin-bottom: auto;
   }
-  div {
+  .container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    height: 100%;
   }
 
-  input {
-    width: 100%;
-    border: none;
-    outline: none;
-  }
-  input[type="button"] {
-    background-color: transparent;
-    cursor: pointer;
+  img {
+    width: 15%;
   }
 
-  h1 {
-    font-size: 4em;
-    font-weight: 100;
-    color: indigo;
+  .logo {
+    margin-bottom: 10pt;
   }
+  @media (max-width: 640px) {
+    .main {
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      background: url(/images/background-mob.png);
+      background-size: cover;
+      background-color: #33174a;
+    }
+    form {
+      padding: 30pt 40pt;
+    }
+    .container {
+      padding: 50pt;
+    }
 
-  .signin {
-    color: indigo;
-    opacity: 0.5;
-  }
-
-  .isValid {
-    opacity: 1;
-  }
-  .signup {
-    color: rgb(206, 87, 87);
+    img {
+      width: 80%;
+    }
   }
 </style>
