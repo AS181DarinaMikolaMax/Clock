@@ -4,7 +4,7 @@
   import { Link, navigate } from "svelte-routing";
   import AuthService from "../core/service/authService";
   import authState from "../core/store/authState";
-  import { routes } from "../router/AppRouter.svelte";
+  import { Routes } from "../router/AppRouter.svelte";
 
   const authService = getContext(AuthService);
 
@@ -16,12 +16,12 @@
   $: authButtonItem = $authState.token
     ? {
         title: "Выйти",
-        path: "/",
+        path: Routes.HOME,
         onclick: logout,
       }
-    : { title: "Войти", path: "login" };
+    : { title: "Войти", path: Routes.LOGIN };
 
-  $: items = [{ title: "Главная", path: "/" }, authButtonItem];
+  $: items = [{ title: "Главная", path: Routes.HOME }, authButtonItem];
 </script>
 
 <nav>

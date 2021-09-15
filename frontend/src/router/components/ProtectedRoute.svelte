@@ -1,5 +1,4 @@
 <script>
-  import ProtectedRoute from "./ProtectedRoute.svelte";
   import { Route } from "svelte-routing";
   import authState from "../../core/store/authState";
   import AccessDeniedPage from "./AccessDeniedPage.svelte";

@@ -1,11 +1,19 @@
 <script context="module">
-  export const routes = {
-    HOME: "/",
-    LOGIN: "login",
-
+  export class Routes {
+    static get HOME() {
+      return "/";
+    }
+    static get LOGIN() {
+      return "login";
+    }
+    static get SIGNUP() {
+      return "signup";
+    }
     //for github pages
-    GH_HOME: "KekToDo",
-  };
+    static get GH_HOME() {
+      return "KekToDo";
+    }
+  }
 </script>
 
 <script>
@@ -19,9 +27,9 @@
 
 <Router {url}>
   <slot />
-  <Route component={HomePage} path={routes.HOME} />
-  <Route component={LoginPage} path={routes.LOGIN} />
+  <Route component={HomePage} path={Routes.HOME} />
+  <Route component={LoginPage} path={Routes.LOGIN} />
 
   <!-- For Github Pages intial page -->
-  <Route component={HomePage} path={routes.GH_HOME} />
+  <Route component={HomePage} path={Routes.GH_HOME} />
 </Router>
