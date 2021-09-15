@@ -56,13 +56,15 @@
         <div class="button-wrapper">
           <SubmitButton value="Увійти" on:click={handleLogin} />
         </div>
-
-        {#if isLoading}
-          <BarLoader size="90" color="rgb(145, 87, 187)" />
-        {/if}
       </form>
     </div>
     <SignUpButton value="У мене немає аккаунту" on:click={handleSignUp} />
+
+    <div class="loading-wrapper">
+      {#if isLoading}
+        <BarLoader size="90" color="rgb(145, 87, 187)" />
+      {/if}
+    </div>
   </div>
 </div>
 
@@ -107,6 +109,10 @@
 
   img {
     width: 15%;
+  }
+  .loading-wrapper {
+    display: flex;
+    justify-content: center;
   }
 
   .logo {
