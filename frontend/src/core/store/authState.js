@@ -6,9 +6,4 @@ const initialState = {
 
 const authState = writable(initialState);
 
-window.addEventListener('storage', () => {
-    console.log('AAAAAAAAAAAAa');
-    authState.update((state) => ({...state, token: localStorage.getItem('token')}))
-});
-
 export default authState;
