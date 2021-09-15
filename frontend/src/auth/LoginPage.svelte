@@ -37,7 +37,7 @@
 <div class="main">
   <div class="container">
     <div class="logo">
-      <img src="images/logo.png" alt="logo" />
+      <img src="/KekToDo/images/logo.png" alt="logo" />
     </div>
     <div class="form-wrapper">
       <form autocomplete="off">
@@ -73,7 +73,7 @@
     top: 0;
     left: 0;
     position: absolute;
-    background: url(/images/background.png);
+    background: url(/KekToDo/images/background.png);
     background-size: cover;
     background-color: #33174a;
   }
@@ -119,7 +119,7 @@
       top: 0;
       left: 0;
       position: absolute;
-      background: url(/images/background-mob.png);
+      background: url(/KekToDo/images/background-mob.png);
       background-size: cover;
       background-color: #33174a;
     }
