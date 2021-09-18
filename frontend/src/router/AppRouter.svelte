@@ -1,5 +1,9 @@
 <script context="module">
   export class Routes {
+    // static get repoPrefix() {
+    //   return "/KekToDo";
+    // }
+
     static get HOME() {
       return "/";
     }
@@ -20,7 +24,6 @@
   import { Router, Route } from "svelte-routing";
   import LoginPage from "../auth/LoginPage.svelte";
   import HomePage from "../home/HomePage.svelte";
-  import ProtectedRoute from "./components/ProtectedRoute.svelte";
 
   export let url;
 </script>

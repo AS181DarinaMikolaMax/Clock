@@ -34,7 +34,6 @@
       <LoginForm on:login={handleLogin} />
     </div>
     <SignUpButton value="У мене немає аккаунту" on:click={handleSignUp} />
-
     <div class="loading-wrapper">
       {#if isLoading}
         <BarLoader size="90" color="rgb(145, 87, 187)" />
