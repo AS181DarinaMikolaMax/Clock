@@ -9,7 +9,7 @@
   import { getContext } from "svelte";
 
   const authServise = getContext<AuthService>(AuthService);
-
+  console.log("authServise", authServise);
   const handleLogin = async ({ detail: { username, password } }) => {
     isLoading = true;
     await authServise.login(username, password);

@@ -5,12 +5,13 @@
   export let component: any;
   export let path: string;
   export let args = {};
+  let resultComponent;
+  $: {
+    resultComponent = $authState.token ? component : AccessDeniedPage;
+    console.log(resultComponent);
+  }
 </script>
 
-<Route
-  {path}
-  component={$authState.token ? component : AccessDeniedPage}
-  {...args}
->
+<Route {path} component={resultComponent} {...args}>
   <slot />
 </Route>

@@ -1,4 +1,4 @@
-<script cotext="module" lang="ts">
+<script context="module" lang="ts">
   const baseUrl = "http://localhost:8080/";
 
   export class API {
@@ -6,7 +6,10 @@
       return fetch(`${baseUrl}${path}`, { body, headers, method });
     }
 
-    async post(path: string, { body, headers }: RequestInit): Promise<any> {
+    async post(
+      path: string,
+      { body, headers }: RequestInit = {}
+    ): Promise<any> {
       const response = await this._commonFetch(path, {
         body,
         headers,
@@ -17,7 +20,7 @@
 
     async get(
       path: string,
-      { headers }: Pick<RequestInit, "headers">
+      { headers }: Pick<RequestInit, "headers"> = {}
     ): Promise<any> {
       const response = await this._commonFetch(path, { headers });
       return response.json();

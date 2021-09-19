@@ -9,9 +9,7 @@
 </script>
 
 <main>
-  <AppRouter {url}>
-    <NavBar />
-  </AppRouter>
+  <AppRouter {url} />
 </main>
 
 <style>

@@ -1,1 +1,9 @@
-<h1>Protected route. Access denied. Sign in and try again</h1>
+<script>
+  import { Link } from "svelte-routing";
+  import { Routes } from "../AppRouter.svelte";
+</script>
+
+<h1>
+  Protected route. Access denied. <Link to={Routes.LOGIN}>Sign in</Link> and try
+  again
+</h1>
