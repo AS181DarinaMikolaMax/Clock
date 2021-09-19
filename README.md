@@ -25,7 +25,7 @@
 - Framework: Svelte (SPA)
 ### Backend
 - ЯП: Java
-- БД: Oracle
+- БД: Postgre
 - Framework: Spring?...
 ### Design
 - Photoshop
