@@ -1,4 +1,4 @@
-# KekToDo (Трекер привычек)
+# Clock (Трекер привычек)
 
 ## Тут мы делаем наш проект по Веб сервисам 2021. 
 ## Ваши PRы будут рассмотренны немедленно и смержены
@@ -25,7 +25,7 @@
 - Framework: Svelte (SPA)
 ### Backend
 - ЯП: Java
-- БД: Oracle
+- БД: Postgre
 - Framework: Spring?...
 ### Design
 - Photoshop
