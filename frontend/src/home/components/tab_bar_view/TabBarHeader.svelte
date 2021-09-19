@@ -4,7 +4,7 @@
 
 <div class="header">
   {#if innerWidth > 800}
-    <img src="/images/logoblack.png" width="200" alt="logo" />
+    <img src="/KekToDo/images/logoblack.png" width="200" alt="logo" />
   {/if}
   <slot />
 </div>
