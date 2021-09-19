@@ -13,10 +13,27 @@
   setContext(TAB_CONTROLLER_KEY, tabViewController);
 </script>
 
-<TabBarHeader>
-  {#each items as item, index}
-    <HeaderItem label={item.label} key={index} />
-  {/each}
-</TabBarHeader>
+<div class="main">
+  <TabBarHeader>
+    {#each items as item, index}
+      <HeaderItem label={item.label} key={index} />
+    {/each}
+  </TabBarHeader>
+  <div class="content">
+    <svelte:component this={items[$tabViewController].componet} />
+  </div>
+</div>
 
-<svelte:component this={items[$tabViewController].componet} />
+<style>
+  .main {
+    padding: 20pt 100pt;
+  }
+  @media (max-width: 640px) {
+    .main {
+      padding: 0pt 20pt;
+    }
+    .content {
+      margin-top: 30pt;
+    }
+  }
+</style>

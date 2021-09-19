@@ -36,4 +36,10 @@
     font-weight: 600;
     border-bottom: 1px solid #242323;
   }
+
+  @media (max-width: 640px) {
+    .item {
+      font-size: 16px;
+    }
+  }
 </style>

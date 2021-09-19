@@ -5,7 +5,7 @@
   import ProfilePage from "./profile/ProfilePage.svelte";
 </script>
 
-<div>
+<div class="main">
   <TabBarView
     items={[
       {
@@ -23,3 +23,15 @@
     ]}
   />
 </div>
+
+<style>
+  .main {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: url(/KekToDo/images/background-home.png);
+    background-size: cover;
+  }
+</style>
