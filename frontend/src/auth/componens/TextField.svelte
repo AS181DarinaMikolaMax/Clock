@@ -1,7 +1,7 @@
-<script>
-  export let value;
-  export let placeholder;
-  export let type;
+<script lang="ts">
+  export let value: string;
+  export let placeholder: string;
+  export let type: "password" | null = null;
 </script>
 
 {#if type === "password"}

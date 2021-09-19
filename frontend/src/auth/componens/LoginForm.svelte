@@ -1,28 +1,19 @@
-<script>
+<script lang="ts">
   import TextField from "./TextField.svelte";
   import SubmitButton from "./SubmitButton.svelte";
 
   import { createEventDispatcher } from "svelte";
 
-  let username;
-  let password;
+  let username: string;
+  let password: string;
 
   const dispatch = createEventDispatcher();
   const handleLogin = () => dispatch("login", { username, password });
 </script>
 
 <form autocomplete="off">
-  <TextField
-    class="text-input"
-    bind:value={username}
-    placeholder="Ім'я користувача"
-  />
-  <TextField
-    type="password"
-    class="text-input"
-    bind:value={password}
-    placeholder="Пароль"
-  />
+  <TextField bind:value={username} placeholder="Ім'я користувача" />
+  <TextField type="password" bind:value={password} placeholder="Пароль" />
 
   <div class="button-wrapper">
     <SubmitButton value="Увійти" on:click={handleLogin} />

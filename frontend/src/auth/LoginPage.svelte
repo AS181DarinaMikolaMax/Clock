@@ -1,15 +1,14 @@
-<script>
-  import { getContext } from "svelte";
-
+<script lang="ts">
   import { navigate } from "svelte-routing";
   import { Routes } from "../router/AppRouter.svelte";
 
-  import AuthService from "../core/service/authService";
+  import { AuthService } from "../core/service/AuthService.svelte";
   import { BarLoader } from "svelte-loading-spinners";
   import SignUpButton from "./componens/SignUpButton.svelte";
   import LoginForm from "./componens/LoginForm.svelte";
+  import { getContext } from "svelte";
 
-  const authServise = getContext(AuthService);
+  const authServise = getContext<AuthService>(AuthService);
 
   const handleLogin = async ({ detail: { username, password } }) => {
     isLoading = true;

@@ -1,9 +1,11 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from "svelte";
+  import type { ClickEvent } from "../../types/Types.svelte";
 
-  export let value;
+  export let value: string;
+
   const dispatch = createEventDispatcher();
-  const handleClick = (e) => dispatch("click", e);
+  const handleClick = (e: ClickEvent) => dispatch("click", e);
 </script>
 
 <div class="button" on:click={handleClick}>

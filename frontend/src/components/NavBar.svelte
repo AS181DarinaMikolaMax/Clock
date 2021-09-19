@@ -2,8 +2,8 @@
   import { getContext } from "svelte";
 
   import { Link, navigate } from "svelte-routing";
-  import AuthService from "../core/service/authService";
-  import authState from "../core/store/authState";
+  import AuthService from "../core/service/AuthService.svelte";
+  import { authState } from "../core/store/AuthState.svelte";
   import { Routes } from "../router/AppRouter.svelte";
 
   const authService = getContext(AuthService);

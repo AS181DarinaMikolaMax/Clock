@@ -1,5 +1,5 @@
 <script>
-  import authState from "../core/store/authState";
+  import { authState } from "../core/store/AuthState.svelte";
 </script>
 
 <h1>Трекер привычек</h1>

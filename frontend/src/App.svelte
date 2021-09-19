@@ -1,5 +1,5 @@
-<script>
-  import injectServices from "./core/service/injectServices";
+<script lang="ts">
+  import { injectServices } from "./core/service/DependencyProvider.svelte";
   import NavBar from "./components/NavBar.svelte";
   import AppRouter from "./router/AppRouter.svelte";
 
