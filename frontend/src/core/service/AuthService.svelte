@@ -13,12 +13,13 @@
     async login(username: string, password: string): Promise<void> {
       await asyncStub();
       localStorage.setItem("token", stubToken);
-      authState.update((state) => ({ ...state, token: stubToken }));
-      // try {
-      //   await this._api.get("/login");
-      // } catch (e) {
-      //   alert(e);
-      // }
+      try {
+        const response = await this._api.post("/login");
+        console.log("AuthService => login => response", response);
+        authState.update((state) => ({ ...state, token: stubToken }));
+      } catch (e) {
+        alert(e);
+      }
     }
 
     async logout(): Promise<void> {

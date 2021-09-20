@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  const baseUrl = "http://localhost:8080/";
+  const baseUrl = "http://localhost:8080";
 
   export class API {
     _commonFetch(path: string, { body, headers, method }: RequestInit) {
