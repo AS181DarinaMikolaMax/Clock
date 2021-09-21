@@ -3,7 +3,11 @@
 
   export class API {
     _commonFetch(path: string, { body, headers, method }: RequestInit) {
-      return fetch(`${baseUrl}${path}`, { body, headers, method });
+      return fetch(`${baseUrl}${path}`, {
+        body,
+        headers: { ...headers, "Content-Type": "application/json" },
+        method,
+      });
     }
 
     async post(

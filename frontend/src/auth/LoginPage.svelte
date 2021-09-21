@@ -7,6 +7,7 @@
   import SignUpButton from "./componens/SignUpButton.svelte";
   import LoginForm from "./componens/LoginForm.svelte";
   import { getContext } from "svelte";
+  import { authState } from "../core/store/AuthState.svelte";
 
   const authServise = getContext<AuthService>(AuthService);
   console.log("authServise", authServise);
@@ -14,7 +15,8 @@
     isLoading = true;
     await authServise.login(username, password);
     isLoading = false;
-    navigate(Routes.HOME);
+    if ($authState.token) navigate(Routes.HOME);
+    else alert("Problems with login");
   };
 
   const handleSignUp = async () => {
