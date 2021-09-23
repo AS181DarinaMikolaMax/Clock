@@ -1,8 +1,34 @@
 <script lang="ts">
+  import { getContext, onMount } from "svelte";
+  import { HabitsService } from "../../core/service/habitsService";
+
+  import type { Habit } from "../../core/models/habit";
+  import HabitsList from "./components/HabitsList.svelte";
+
+  let habits: Habit[];
+  const habitsService = getContext<HabitsService>(HabitsService);
+
+  const loadHabits = async () => {
+    habits = await habitsService.getMyHabits();
+  };
+
+  const handleSelectHabit = (e: CustomEvent<Habit>) => {
+    const updatedHabit = e.detail;
+    habits = habits.map((habit) =>
+      habit.id == updatedHabit.id
+        ? { ...updatedHabit, isDone: !updatedHabit.isDone }
+        : habit
+    );
+    // loadHabits();
+  };
+
+  onMount(loadHabits);
 </script>
 
 <div class="main">
-  <div />
+  <div>
+    <HabitsList habits={habits ?? []} on:habitSelected={handleSelectHabit} />
+  </div>
 </div>
 
 <style>

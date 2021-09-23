@@ -13,9 +13,9 @@ public class HabitRepositoryImpl implements HabitRepository {
 
     private Map<String, HabitDTO> dataSource = new HashMap<String, HabitDTO>();
     {
-        dataSource.put("1", new HabitDTO("1", "Прийняти пигулки", new Date(), Period.day));
-        dataSource.put("2", new HabitDTO("2", "Зробити вправи", new Date(), Period.day));
-        dataSource.put("3", new HabitDTO("3", "Прочитати статтю", new Date(), Period.day));
+        dataSource.put("1", new HabitDTO("1", "Прийняти пигулки", new Date(), Period.day, false));
+        dataSource.put("2", new HabitDTO("2", "Зробити вправи", new Date(), Period.day, true));
+        dataSource.put("3", new HabitDTO("3", "Прочитати статтю", new Date(), Period.day, true));
 
     }
 
