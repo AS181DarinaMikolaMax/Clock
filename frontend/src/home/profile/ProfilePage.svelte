@@ -1,7 +1,6 @@
 <script lang="ts">
   import { getContext } from "svelte";
-  import { AuthService } from "../../core/service/AuthService.svelte";
-
+  import { AuthService } from "../../core/service/authService";
   const authService = getContext<AuthService>(AuthService);
 </script>
 

@@ -1,7 +1,8 @@
 <script lang="ts">
   import { Route } from "svelte-routing";
-  import { authState } from "../../core/store/AuthState.svelte";
+  import { authState } from "../../core/store/authState";
   import AccessDeniedPage from "./AccessDeniedPage.svelte";
+
   export let component: any;
   export let path: string;
   export let args = {};

@@ -1,0 +1,1 @@
+- run service `mvn spring-boot:run --debug`

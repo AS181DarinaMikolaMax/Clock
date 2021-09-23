@@ -61,6 +61,10 @@ export default {
 		}),
 		commonjs({ requireReturnsDefault: 'auto', }),
 
+		typescript({
+			rootDir: "./src",
+		}),
+
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
 		!production && serve(),

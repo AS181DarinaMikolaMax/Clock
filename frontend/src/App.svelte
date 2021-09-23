@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { injectServices } from "./core/service/DependencyProvider.svelte";
+  import { injectServices } from "./core/service/depandencyProvider";
   import AppRouter from "./router/AppRouter.svelte";
 
   export let url = "";

@@ -2,12 +2,12 @@
   import { navigate } from "svelte-routing";
   import { Routes } from "../router/AppRouter.svelte";
 
-  import { AuthService } from "../core/service/AuthService.svelte";
+  import { AuthService } from "../core/service/authService";
   import { BarLoader } from "svelte-loading-spinners";
   import SignUpButton from "./componens/SignUpButton.svelte";
   import LoginForm from "./componens/LoginForm.svelte";
   import { getContext } from "svelte";
-  import { authState } from "../core/store/AuthState.svelte";
+  import { authState } from "../core/store/authState";
 
   const authServise = getContext<AuthService>(AuthService);
   console.log("authServise", authServise);
