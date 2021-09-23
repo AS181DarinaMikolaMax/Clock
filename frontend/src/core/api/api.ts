@@ -29,4 +29,13 @@ export class API {
     const response = await this._commonFetch(path, { headers });
     return response.json();
   }
+
+  async put(path: string, { body, headers }: RequestInit = {}): Promise<any> {
+    const response = await this._commonFetch(path, {
+      body,
+      headers,
+      method: "PUT",
+    });
+    return response.json();
+  }
 }

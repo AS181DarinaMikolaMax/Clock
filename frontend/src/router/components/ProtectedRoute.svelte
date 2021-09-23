@@ -6,11 +6,7 @@
   export let component: any;
   export let path: string;
   export let args = {};
-  let resultComponent;
-  $: {
-    resultComponent = $authState.token ? component : AccessDeniedPage;
-    console.log(resultComponent);
-  }
+  $: resultComponent = $authState.token ? component : AccessDeniedPage;
 </script>
 
 <Route {path} component={resultComponent} {...args}>

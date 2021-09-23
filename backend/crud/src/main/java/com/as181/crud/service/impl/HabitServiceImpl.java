@@ -20,4 +20,9 @@ public class HabitServiceImpl implements HabitService {
     public List<HabitDTO> getAllHabits() {
         return repository.getHabits();
     }
+
+    @Override
+    public HabitDTO updateHabit(String id, HabitDTO habit) {
+        return repository.updateHabit(id, habit);
+    }
 }

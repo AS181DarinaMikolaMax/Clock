@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class HabitRepositoryImpl implements HabitRepository {
 
-    private Map<String, HabitDTO> dataSource = new HashMap<String, HabitDTO>();
+    private static Map<String, HabitDTO> dataSource = new HashMap<String, HabitDTO>();
     {
         dataSource.put("1", new HabitDTO("1", "Прийняти пигулки", new Date(), Period.day, false));
         dataSource.put("2", new HabitDTO("2", "Зробити вправи", new Date(), Period.day, true));
@@ -22,5 +22,11 @@ public class HabitRepositoryImpl implements HabitRepository {
     @Override
     public List<HabitDTO> getHabits() {
         return new ArrayList<>(dataSource.values());
+    }
+
+    @Override
+    public HabitDTO updateHabit(String id, HabitDTO habit) {
+        dataSource.put(id, habit);
+        return dataSource.get(id);
     }
 }

@@ -6,4 +6,7 @@ import com.as181.crud.models.HabitDTO;
 
 public interface HabitRepository {
     public List<HabitDTO> getHabits();
+
+    public HabitDTO updateHabit(String id, HabitDTO habit);
+
 }

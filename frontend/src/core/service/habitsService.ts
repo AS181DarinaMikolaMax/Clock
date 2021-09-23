@@ -5,7 +5,11 @@ export class HabitsService {
   _api = habitsApi;
 
   async getMyHabits(): Promise<Habit[]> {
-    const response = (await this._api.get("/habits")) as [];
+    const response: [] = await this._api.get("/habits");
     return response.map(Habit.fromJson);
+  }
+
+  async changeHabitStatus(habit: Habit) {
+    await this._api.put(`/habits/${habit.id}`, { body: JSON.stringify(habit) });
   }
 }
