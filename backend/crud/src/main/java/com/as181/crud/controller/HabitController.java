@@ -19,7 +19,7 @@ import com.as181.crud.models.HabitDTO;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/habits")
+@RequestMapping("/api/habits")
 public class HabitController {
 
     @Autowired
@@ -33,8 +33,10 @@ public class HabitController {
 
     @PutMapping(path = "/{id}")
     public ResponseEntity<HabitDTO> updateHabit(@PathVariable String id, @RequestBody HabitDTO habit) {
-
+        System.out.println("Request started");
         final HabitDTO updatedHabit = service.updateHabit(id, habit);
+        System.out.println("Request finished");
+
         return new ResponseEntity<HabitDTO>(updatedHabit, HttpStatus.OK);
     }
 

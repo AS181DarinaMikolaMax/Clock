@@ -14,8 +14,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
+@RequestMapping("/api")
 public class AuthController {
     @Autowired
     private Credentials credentials;
@@ -29,7 +31,7 @@ public class AuthController {
     @CrossOrigin()
     public ResponseEntity<Object> login(@RequestBody LoginRequest loginRequest) {
         // Get data from service layer into entityList.
-
+        System.out.println("Request started");
         Map<String, String> response = new HashMap<String, String>();
 
         if (!credentials.isAuthenticated(loginRequest.getUsername(), loginRequest.getPassword()))
