@@ -9,4 +9,6 @@ public interface HabitRepository {
 
     public HabitDTO updateHabit(String id, HabitDTO habit);
 
+    public HabitDTO createHabit(String name);
+
 }

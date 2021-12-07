@@ -8,6 +8,7 @@ import com.as181.crud.service.HabitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.as181.crud.models.CreateHabitDTO;
 import com.as181.crud.models.HabitDTO;
 
 @Service
@@ -24,5 +25,10 @@ public class HabitServiceImpl implements HabitService {
     @Override
     public HabitDTO updateHabit(String id, HabitDTO habit) {
         return repository.updateHabit(id, habit);
+    }
+
+    @Override
+    public HabitDTO createHabit(HabitDTO habit) {
+        return repository.createHabit(habit.getName());
     }
 }

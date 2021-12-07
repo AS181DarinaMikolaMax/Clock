@@ -10,11 +10,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.as181.crud.models.CreateHabitDTO;
 import com.as181.crud.models.HabitDTO;
 
 @RestController
@@ -35,6 +37,15 @@ public class HabitController {
     public ResponseEntity<HabitDTO> updateHabit(@PathVariable String id, @RequestBody HabitDTO habit) {
         System.out.println("Request started");
         final HabitDTO updatedHabit = service.updateHabit(id, habit);
+        System.out.println("Request finished");
+
+        return new ResponseEntity<HabitDTO>(updatedHabit, HttpStatus.OK);
+    }
+
+    @PostMapping()
+    public ResponseEntity<HabitDTO> createHabit(@RequestBody HabitDTO habit) {
+        System.out.println("Request started CREATING");
+        final HabitDTO updatedHabit = service.createHabit(habit);
         System.out.println("Request finished");
 
         return new ResponseEntity<HabitDTO>(updatedHabit, HttpStatus.OK);

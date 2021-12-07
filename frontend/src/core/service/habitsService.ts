@@ -12,4 +12,10 @@ export class HabitsService {
   async changeHabitStatus(habit: Habit) {
     await this._api.put(`/habits/${habit.id}`, { body: JSON.stringify(habit) });
   }
+
+  async createHabit(name: string) {
+    await this._api.post(`/habits`, {
+      body: JSON.stringify(Habit.onlyNamed(name)),
+    });
+  }
 }

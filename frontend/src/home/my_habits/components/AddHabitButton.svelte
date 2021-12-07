@@ -1,6 +1,13 @@
-<div class="button">
-  <div class="label">Додати звичку</div>
-</div>
+<script>
+  import { Link } from "svelte-routing";
+  import { Routes } from "../../../router/AppRouter.svelte";
+</script>
+
+<Link to={Routes.ADD_HABBIT}>
+  <div class="button">
+    <div class="label">Додати звичку</div>
+  </div>
+</Link>
 
 <style>
   .button {

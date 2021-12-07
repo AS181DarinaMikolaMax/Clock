@@ -1,4 +1,4 @@
-import type { Period } from "./period";
+import { Period } from "./period";
 
 export class Habit {
   name: string;
@@ -6,6 +6,16 @@ export class Habit {
   endDate: Date;
   period: Period;
   isDone: boolean;
+
+  static onlyNamed(name: string): Habit {
+    return {
+      name,
+      id: "",
+      endDate: new Date(),
+      isDone: false,
+      period: Period.day,
+    };
+  }
 
   static fromJson(json: { [k in string]: any }): Habit {
     const name = json["name"]!;

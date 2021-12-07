@@ -29,4 +29,13 @@ public class HabitRepositoryImpl implements HabitRepository {
         dataSource.put(id, habit);
         return dataSource.get(id);
     }
+
+    @Override
+    public HabitDTO createHabit(String name) {
+        final String newId = dataSource.size() + 1 + "";
+        final HabitDTO habit = new HabitDTO(newId, name, new Date(), Period.day, false);
+        dataSource.put(newId, habit);
+        return habit;
+
+    }
 }
